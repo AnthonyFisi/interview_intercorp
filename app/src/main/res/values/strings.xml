@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">intercorp</string>
+
+    <string name="facebook_app_id">752791843045410</string>
+    <string name="fb_login_protocol_scheme">fb752791843045410</string>
+    <string name="facebook_client_token">1424e945865802626af2981e41d772df</string>
+
+
+    <string name="heading">MVVM Architecture Pattern</string>
+    <string name="email_hint">Enter your Email ID</string>
+    <string name="password_hint">Enter your password</string>
+    <string name="button_text">Login</string>
+    <string name="age">Age</string>
+    <string name="name">Name</string>
+    <string name="lastname">LastName</string>
+    <string name="register">Register</string>
+    <string name="birthdate">Birthdate</string>
+    <string name="form">Form</string>
+    <string name="login_facebook">Login Facebook</string>
+
+</resources>

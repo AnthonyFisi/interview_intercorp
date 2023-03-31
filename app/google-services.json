@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1058404587706",
+    "project_id": "intercorp-e7788",
+    "storage_bucket": "intercorp-e7788.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1058404587706:android:5e37a239fa41133c420a83",
+        "android_client_info": {
+          "package_name": "com.example.intercorp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1058404587706-af8lho5q90ujaq5025qqv0u0i9tl082v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoVsPiVqNvITC1Ko242gjAjgEk-EBv2wo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1058404587706-af8lho5q90ujaq5025qqv0u0i9tl082v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
