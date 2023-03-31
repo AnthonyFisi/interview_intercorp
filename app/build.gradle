@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.intercorp'
+    namespace 'com.login.intercorp'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.intercorp"
+        applicationId "com.login.intercorp"
         minSdk 24
         targetSdk 33
         versionCode 1
