@@ -9,6 +9,8 @@ import androidx.lifecycle.MutableLiveData;
 import com.login.intercorp.model.UserModel;
 import com.login.intercorp.repository.RegisterRepository;
 
+import java.util.List;
+
 public class RegisterViewModel extends AndroidViewModel {
     private RegisterRepository registerRepository;
 
@@ -16,11 +18,14 @@ public class RegisterViewModel extends AndroidViewModel {
 
     private MutableLiveData<UserModel> userModelLiveData;
 
+    private MutableLiveData<List<UserModel>> listUserModelLiveData;
+
     public RegisterViewModel(@NonNull Application application) {
         super(application);
         registerRepository = new RegisterRepository();
         userModelLiveData = registerRepository.getUserModelLiveData();
         registerLiveData = registerRepository.getRegisterLiveData();
+        listUserModelLiveData = registerRepository.getListUserModelLiveData();
 
     }
 
@@ -32,11 +37,19 @@ public class RegisterViewModel extends AndroidViewModel {
         registerRepository.validateUser(id);
     }
 
+    public void getListUserModel(){
+        registerRepository.getUsers();
+    }
+
     public MutableLiveData<Boolean> getRegisterLiveData(){
         return registerLiveData;
     }
 
     public MutableLiveData<UserModel> getUserModelLiveData(){
         return userModelLiveData;
+    }
+
+    public MutableLiveData<List<UserModel>> getListUserModelLiveData(){
+        return listUserModelLiveData;
     }
 }
