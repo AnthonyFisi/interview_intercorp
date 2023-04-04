@@ -6,7 +6,10 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.util.Log;
 import android.widget.Button;
+
+import com.google.firebase.auth.FirebaseUser;
 import com.login.intercorp.model.UserModel;
 import com.login.intercorp.view.HomeActivity;
 import com.login.intercorp.view.RegisterActivity;
@@ -26,20 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Response of registerViewModel if a user exist or not
-        registerViewModel = ViewModelProviders.of(this).get(RegisterViewModel.class);
-        registerViewModel.getUserModelLiveData().observe(this, userModelData -> {
-            if(userModelData == null){
-                intent = new Intent(MainActivity.this, RegisterActivity.class);
-                intent.putExtra("user", userModel);
 
-            }else{
-                intent = new Intent(MainActivity.this, HomeActivity.class);
-                intent.putExtra("user", userModelData);
-            }
-            startActivity(intent);
-
-        });
 
         // ViewModel for retrieve data from login by facebook and then validate if the user exist or not
         loginViewModel = ViewModelProviders.of(this).get(LoginViewModel.class);
@@ -54,6 +44,22 @@ public class MainActivity extends AppCompatActivity {
                         0,
                         ""
                         );
+
+
+                // Response of registerViewModel if a user exist or not
+                registerViewModel = ViewModelProviders.of(this).get(RegisterViewModel.class);
+                registerViewModel.getUserModelLiveData().observe(this, userModelData -> {
+                    if(userModelData == null){
+                        intent = new Intent(MainActivity.this, RegisterActivity.class);
+                        intent.putExtra("user", userModel);
+
+                    }else{
+                        intent = new Intent(MainActivity.this, HomeActivity.class);
+                        intent.putExtra("user", userModelData);
+                    }
+                    startActivity(intent);
+
+                });
 
                 // ViewModel for validate if user was registered or not
                 registerViewModel.validateUser(firebaseUser.getUid());
